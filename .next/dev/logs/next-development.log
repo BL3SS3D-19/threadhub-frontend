@@ -1,0 +1,5 @@
+[00:00:01.920] Server  LOG      ✓ Ready in 1380ms
+[00:01:08.648] Browser WARN    Image with src "/_next/static/media/st8_logo.9f095adb.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:05:36.675] Browser WARN    Image with src "/_next/static/media/st8_logo.9f095adb.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
