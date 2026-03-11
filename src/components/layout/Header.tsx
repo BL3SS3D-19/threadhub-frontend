@@ -58,7 +58,7 @@ export function Header() {
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   {user.role === 'user' && (
-                    <DropdownMenuItem asChild className='hover: bg-[white] !important'>
+                    <DropdownMenuItem asChild>
                       <Link href="/profile">
                         <UserIcon className="mr-2 h-4 w-4" />
                         <span>Perfil</span>
