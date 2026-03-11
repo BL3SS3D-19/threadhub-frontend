@@ -32,8 +32,8 @@ export function Header() {
             <>
               {/* Badge de rol */}
               <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${user.role === 'user'
-                  ? 'bg-green-500/20 text-green-400'
-                  : 'bg-yellow-500/20 text-yellow-400'
+                ? 'bg-green-500/20 text-green-400'
+                : 'bg-yellow-500/20 text-yellow-400'
                 }`}>
                 {user.role === 'user' ? 'Miembro' : 'Invitado'}
               </span>
@@ -51,14 +51,14 @@ export function Header() {
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
                       <p className="text-sm font-medium leading-none">
-                        {user.role === 'user' ? (user as any).username || 'Usuario' : 'Invitado'}
+                        {user.role === 'user' ? (user as any).username || 'Miembro' : 'Invitado'}
                       </p>
                       <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   {user.role === 'user' && (
-                    <DropdownMenuItem asChild>
+                    <DropdownMenuItem asChild className='hover: bg-[white] !important'>
                       <Link href="/profile">
                         <UserIcon className="mr-2 h-4 w-4" />
                         <span>Perfil</span>

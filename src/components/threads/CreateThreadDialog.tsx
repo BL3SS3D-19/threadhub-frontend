@@ -47,7 +47,7 @@ export function CreateThreadDialog({ onCreated }: Props) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-6 w-full max-w-2xl rounded-2xl border border-slate-800 bg-[#0B0B10] px-6 py-5 shadow-md shadow-black/40 hover:border-red-500 hover:ring-2 hover:ring-red-500/40"
+      className="mt-6 w-full max-w-2xl rounded-2xl border border-slate-800 bg-[#0B0B10] px-6 py-5 shadow-md shadow-black/40"
     >
       <div className="flex flex-col items-center mb-6">
         <h2 className="text-base font-semibold text-white">

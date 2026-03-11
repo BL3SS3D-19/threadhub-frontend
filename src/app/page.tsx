@@ -12,7 +12,7 @@ export default function HomePage() {
   const router = useRouter()
 
   function handleGoToThreads() {
-    if (!user || user.role == 'guest') {
+    if (!user) {
       router.push('/auth');
       return;
     }
