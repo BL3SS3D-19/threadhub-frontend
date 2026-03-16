@@ -5,18 +5,27 @@ import type { ThreadResponse, ThreadFilters, ReplyResponse } from '@/lib/types';
 
 interface UseThreadsProps {
     filters?: ThreadFilters;
-    threadId?: string; // Para cargar hilo + replies específicos
+    // Si se proporciona threadId, el hook carga ese hilo concreto + sus respuestas.
+    // Si no, carga la lista completa de hilos aplicando los filtros opcionales.
+    threadId?: string;
 }
 
+// Hook unificado para hilos. Gestiona dos modos de uso:
+//
+//   1. Lista: useThreads({ filters }) → devuelve `threads`
+//   2. Detalle: useThreads({ threadId }) → devuelve `thread` + `replies`
+//
+// En ambos casos expone `refresh` para que los componentes puedan
+// actualizar los datos tras crear un nuevo hilo/respuesta sin recargar.
 export function useThreads({ filters, threadId }: UseThreadsProps) {
     const [threads, setThreads] = useState<ThreadResponse[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    const [thread, setThread] = useState<ThreadResponse | null>(null); // Hilo específico
-    const [replies, setReplies] = useState<ReplyResponse[]>([]);        // Respuestas del hilo
+    const [thread, setThread] = useState<ThreadResponse | null>(null);
+    const [replies, setReplies] = useState<ReplyResponse[]>([]);
 
     const fetchThreads = async () => {
-        if (!threadId) { // Lista de hilos
+        if (!threadId) {
             setLoading(true);
             setError(null);
         }
@@ -29,8 +38,11 @@ export function useThreads({ filters, threadId }: UseThreadsProps) {
             setLoading(false);
         }
     };
+
+    // Lanza las dos peticiones en paralelo para reducir el tiempo de carga
+    // de la página de detalle del hilo.
     const fetchThreadWithReplies = async () => {
-        if (threadId) { // Hilo específico + replies
+        if (threadId) {
             setLoading(true);
             setError(null);
             try {
@@ -48,13 +60,14 @@ export function useThreads({ filters, threadId }: UseThreadsProps) {
         }
     };
 
+    // Se vuelve a ejecutar si cambia el término de búsqueda o el hilo que se está viendo.
     useEffect(() => {
         if (threadId) {
             fetchThreadWithReplies();
         } else {
             fetchThreads();
         }
-    }, [filters?.search, threadId]); // Recarga por search o cambio de threadId
+    }, [filters?.search, threadId]);
 
     return {
         threads,

@@ -6,16 +6,21 @@ import { authService } from "@/services/auth.service";
 import { useUser } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
 
+// El formulario maneja tres flujos distintos con el mismo componente
+// para evitar duplicar la lógica de submit y el estado de error.
 type Mode = "login" | "register" | "guest";
 
 export default function LoginRegisterForm() {
   const [mode, setMode] = useState<Mode>("login");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Un único objeto acumula todos los campos del formulario activo;
+  // se resetea al cambiar de modo para no mezclar datos entre formularios.
   const [formData, setFormData] = useState<any>({});
   const { setUser } = useUser();
   const router = useRouter();
 
+  // Al cambiar de modo limpiamos errores y datos para empezar desde cero
   const toggleMode = (newMode: Mode) => {
     setMode(newMode);
     setError(null);
@@ -26,6 +31,9 @@ export default function LoginRegisterForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Un único handler para los tres modos. Tras cualquier autenticación
+  // exitosa, llamamos a /auth/me para obtener el usuario completo y
+  // actualizamos el contexto global antes de redirigir al home.
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -46,6 +54,7 @@ export default function LoginRegisterForm() {
         await authService.register(username, email, password, avatarUrl);
       }
 
+      // En todos los casos, hidratamos el contexto con el perfil real del servidor
       const me = await authService.me();
       setUser(me);
       router.push("/");
@@ -71,6 +80,7 @@ export default function LoginRegisterForm() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-[#0B0B10] px-4 md:px-8">
+      {/* Entrada animada del contenedor principal */}
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
@@ -85,6 +95,9 @@ export default function LoginRegisterForm() {
           <div className="mb-4 text-red-500 font-semibold text-sm">{error}</div>
         )}
 
+        {/* AnimatePresence gestiona la transición entre los tres formularios.
+            Cada uno tiene su propia key para que Framer Motion los trate
+            como elementos distintos y aplique enter/exit correctamente. */}
         <AnimatePresence mode="wait">
           {mode === "guest" && (
             <motion.form
@@ -219,6 +232,7 @@ export default function LoginRegisterForm() {
           )}
         </AnimatePresence>
 
+        {/* Navegación entre modos: solo se muestra el botón del modo que NO está activo */}
         <div className="mt-4 flex flex-col gap-2">
           {mode !== "guest" && (
             <button

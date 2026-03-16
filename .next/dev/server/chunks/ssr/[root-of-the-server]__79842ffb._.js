@@ -44,9 +44,12 @@ function LoginRegisterForm() {
     const [mode, setMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("login");
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    // Un único objeto acumula todos los campos del formulario activo;
+    // se resetea al cambiar de modo para no mezclar datos entre formularios.
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({});
     const { setUser } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$src$2f$context$2f$UserContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useUser"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
+    // Al cambiar de modo limpiamos errores y datos para empezar desde cero
     const toggleMode = (newMode)=>{
         setMode(newMode);
         setError(null);
@@ -58,6 +61,9 @@ function LoginRegisterForm() {
             [e.target.name]: e.target.value
         });
     };
+    // Un único handler para los tres modos. Tras cualquier autenticación
+    // exitosa, llamamos a /auth/me para obtener el usuario completo y
+    // actualizamos el contexto global antes de redirigir al home.
     const handleSubmit = async (e)=>{
         e.preventDefault();
         setLoading(true);
@@ -76,6 +82,7 @@ function LoginRegisterForm() {
                 if (!username || !email || !password) throw new Error("Faltan campos obligatorios");
                 await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$src$2f$services$2f$auth$2e$service$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["authService"].register(username, email, password, avatarUrl);
             }
+            // En todos los casos, hidratamos el contexto con el perfil real del servidor
             const me = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$src$2f$services$2f$auth$2e$service$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["authService"].me();
             setUser(me);
             router.push("/");
@@ -114,7 +121,7 @@ function LoginRegisterForm() {
                     children: titles[mode]
                 }, void 0, false, {
                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                    lineNumber: 80,
+                    lineNumber: 90,
                     columnNumber: 9
                 }, this),
                 error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -122,7 +129,7 @@ function LoginRegisterForm() {
                     children: error
                 }, void 0, false, {
                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                    lineNumber: 85,
+                    lineNumber: 95,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -152,7 +159,7 @@ function LoginRegisterForm() {
                                     children: "Solo necesitas tu email para leer los hilos. No podrás crear ni responder."
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 112,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -162,7 +169,7 @@ function LoginRegisterForm() {
                                             children: "Correo"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 116,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -175,13 +182,13 @@ function LoginRegisterForm() {
                                             required: true
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 104,
+                                            lineNumber: 117,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                    lineNumber: 102,
+                                    lineNumber: 115,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -191,13 +198,13 @@ function LoginRegisterForm() {
                                     children: loading ? "Cargando..." : "Entrar como invitado"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                    lineNumber: 114,
+                                    lineNumber: 127,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, "guest", true, {
                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                            lineNumber: 90,
+                            lineNumber: 103,
                             columnNumber: 13
                         }, this),
                         mode === "login" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].form, {
@@ -226,7 +233,7 @@ function LoginRegisterForm() {
                                             children: "Correo"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 135,
+                                            lineNumber: 148,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -239,13 +246,13 @@ function LoginRegisterForm() {
                                             required: true
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 136,
+                                            lineNumber: 149,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 147,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -255,7 +262,7 @@ function LoginRegisterForm() {
                                             children: "Contraseña"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 147,
+                                            lineNumber: 160,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -268,13 +275,13 @@ function LoginRegisterForm() {
                                             required: true
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 148,
+                                            lineNumber: 161,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 159,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -284,13 +291,13 @@ function LoginRegisterForm() {
                                     children: loading ? "Cargando..." : "Entrar"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                    lineNumber: 158,
+                                    lineNumber: 171,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, "login", true, {
                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                            lineNumber: 125,
+                            lineNumber: 138,
                             columnNumber: 13
                         }, this),
                         mode === "register" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].form, {
@@ -319,7 +326,7 @@ function LoginRegisterForm() {
                                             children: "Nombre de usuario"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 179,
+                                            lineNumber: 192,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -331,13 +338,13 @@ function LoginRegisterForm() {
                                             className: inputClass
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 180,
+                                            lineNumber: 193,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                    lineNumber: 178,
+                                    lineNumber: 191,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -347,7 +354,7 @@ function LoginRegisterForm() {
                                             children: "Correo"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 190,
+                                            lineNumber: 203,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -359,13 +366,13 @@ function LoginRegisterForm() {
                                             className: inputClass
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 191,
+                                            lineNumber: 204,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                    lineNumber: 189,
+                                    lineNumber: 202,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -375,7 +382,7 @@ function LoginRegisterForm() {
                                             children: "Contraseña"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 201,
+                                            lineNumber: 214,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -387,13 +394,13 @@ function LoginRegisterForm() {
                                             className: inputClass
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                            lineNumber: 202,
+                                            lineNumber: 215,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                    lineNumber: 200,
+                                    lineNumber: 213,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -403,19 +410,19 @@ function LoginRegisterForm() {
                                     children: loading ? "Cargando..." : "Registrarse"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                                    lineNumber: 211,
+                                    lineNumber: 224,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, "register", true, {
                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                            lineNumber: 169,
+                            lineNumber: 182,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                    lineNumber: 88,
+                    lineNumber: 101,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -428,7 +435,7 @@ function LoginRegisterForm() {
                             children: "Solo quiero leer → Acceder como invitado"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                            lineNumber: 224,
+                            lineNumber: 238,
                             columnNumber: 13
                         }, this),
                         mode !== "login" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -438,7 +445,7 @@ function LoginRegisterForm() {
                             children: "¿Ya tienes cuenta? Inicia sesión"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                            lineNumber: 233,
+                            lineNumber: 247,
                             columnNumber: 13
                         }, this),
                         mode !== "register" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -448,24 +455,24 @@ function LoginRegisterForm() {
                             children: "¿No tienes cuenta? Regístrate"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                            lineNumber: 242,
+                            lineNumber: 256,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-                    lineNumber: 222,
+                    lineNumber: 236,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-            lineNumber: 74,
+            lineNumber: 84,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/components/LoginRegister/loginRegisterForm.tsx",
-        lineNumber: 73,
+        lineNumber: 82,
         columnNumber: 5
     }, this);
 }

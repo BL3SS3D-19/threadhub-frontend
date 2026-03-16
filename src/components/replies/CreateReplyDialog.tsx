@@ -4,10 +4,15 @@ import { threadsService } from '@/services/threads.service';
 import type { ReplyResponse, ThreadResponse } from '@/lib/types';
 
 interface Props {
-    onCreated?: (reply: ReplyResponse) => void;
+    // ID del hilo al que pertenece esta respuesta
     threadId: string;
+    // Se llama con la nueva respuesta para que el padre pueda añadirla
+    // a la lista localmente sin tener que refetchear todo el hilo.
+    onCreated?: (reply: ReplyResponse) => void;
 }
 
+// Formulario para responder a un hilo. Comparte la misma lógica de control
+// de roles que CreateThreadDialog: los invitados no pueden publicar.
 export function CreateReplyDialog({ threadId, onCreated }: Props) {
     const { user } = useUser();
     const [content, setContent] = useState('');
@@ -18,7 +23,6 @@ export function CreateReplyDialog({ threadId, onCreated }: Props) {
         e.preventDefault();
         setLoading(true);
         setError(null);
-
 
         try {
             if (!user) {

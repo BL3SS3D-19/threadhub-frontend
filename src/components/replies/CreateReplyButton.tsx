@@ -1,3 +1,4 @@
+// Botón para mostrar el formulario de respuesta dentro de la página de detalle del hilo.
 interface CreateReplyButtonProps {
     onClick: () => void;
 }

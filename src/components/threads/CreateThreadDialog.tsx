@@ -2,12 +2,16 @@ import { useState } from 'react';
 import { useUser } from '@/context/UserContext';
 import { CreateThreadDTO, ThreadResponse, UserResponse } from '@/lib/types';
 import { threadsService } from '@/services/threads.service';
-import { PlaceholderStyle, PlaceholderValue } from 'next/dist/shared/lib/get-img-props';
 
 interface Props {
+  // Callback opcional que se ejecuta tras crear el hilo con éxito,
+  // útil para que el padre pueda refrescar la lista sin recargar la página.
   onCreated?: (thread: ThreadResponse) => void;
 }
 
+// Formulario inline para crear un nuevo hilo. La validación de rol
+// se hace aquí mismo antes de llamar a la API, para dar feedback rápido
+// sin necesidad de un round-trip al servidor.
 export function CreateThreadDialog({ onCreated }: Props) {
   const { user } = useUser();
   const [title, setTitle] = useState('');
@@ -21,6 +25,7 @@ export function CreateThreadDialog({ onCreated }: Props) {
     setError(null);
 
     try {
+      // Los invitados (guest) pueden leer pero no crear contenido
       if (!user) {
         throw new Error('Debes iniciar sesion para crear un hilo');
       } else if (user.role == 'guest') {
@@ -33,6 +38,7 @@ export function CreateThreadDialog({ onCreated }: Props) {
         authorId: user.id
       });
 
+      // Limpiamos el formulario solo si la petición fue exitosa
       setTitle('');
       setContent('');
 
@@ -53,9 +59,6 @@ export function CreateThreadDialog({ onCreated }: Props) {
         <h2 className="text-base font-semibold text-white">
           Crea una nueva conversacion
         </h2>
-
-
-
       </div>
 
       <div className="space-y-3">

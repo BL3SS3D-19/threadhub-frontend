@@ -1,3 +1,5 @@
+// Botón de acción principal para abrir el formulario de nuevo hilo.
+// El estado abierto/cerrado del formulario lo gestiona el componente padre.
 interface CreateThreadButtonProps {
     onClick?: () => void;
 }

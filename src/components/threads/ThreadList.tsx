@@ -7,6 +7,8 @@ interface ThreadListProps {
   threads: ThreadResponse[];
 }
 
+// Renderiza la lista de hilos del foro. Cada tarjeta enlaza
+// a la página de detalle del hilo (/threads/[id]).
 export function ThreadList({ threads }: ThreadListProps) {
   if (threads.length === 0) {
     return <p>No hay hilos todavía.</p>;
@@ -23,18 +25,17 @@ export function ThreadList({ threads }: ThreadListProps) {
               {thread.title}
             </h3>
 
-
+            {/* Vista previa del contenido: máx. 220 caracteres para no reventar la tarjeta */}
             <p className="mb-4 line-clamp-2 text-sm text-slate-300">
               {thread.content.slice(0, 220)}…
             </p>
 
+            {/* Pie de tarjeta: autor · nº respuestas · tiempo relativo */}
             <div className="flex items-center justify-between text-xs text-slate-500">
               <span>por {thread.author.username}</span>
 
-              {/* Ejemplo de meta info similar a “3 · about 2 hours ago” */}
               <span className="flex items-center gap-4">
                 <span className="flex items-center gap-1">
-                  {/* icono comentarios (svg opcional) */}
                   <span className="text-slate-400">💬</span>
                   <span>{thread.replyCount}</span>
                 </span>

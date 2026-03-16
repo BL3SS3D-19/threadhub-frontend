@@ -15,6 +15,11 @@ import { useUser } from '@/context/UserContext';
 import Image from 'next/image';
 import st8_logo from './media/st8_logo.jpg';
 
+// Header fijo en la parte superior de todas las páginas.
+// Muestra el logo y, dependiendo del estado de autenticación:
+//   - Si isLoading: un placeholder animado mientras se resuelve la sesión.
+//   - Si hay usuario: badge de rol (Miembro/Invitado) + menú desplegable.
+//   - Si no hay usuario: botón de acceso que lleva a /auth.
 export function Header() {
   const { user, isLoading, logout } = useUser();
 
@@ -27,10 +32,11 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           {isLoading ? (
+            // Skeleton circular mientras se comprueba la cookie de sesión
             <div className="h-8 w-8 rounded-full bg-muted animate-pulse" />
           ) : user ? (
             <>
-              {/* Badge de rol */}
+              {/* Pill de rol: verde para miembros, amarillo para invitados */}
               <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${user.role === 'user'
                 ? 'bg-green-500/20 text-green-400'
                 : 'bg-yellow-500/20 text-yellow-400'
@@ -38,10 +44,12 @@ export function Header() {
                 {user.role === 'user' ? 'Miembro' : 'Invitado'}
               </span>
 
+              {/* Menú de usuario: avatar como trigger, accesos a perfil y logout */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                     <Avatar className="h-8 w-8">
+                      {/* Sin foto de perfil por ahora; el fallback usa la inicial del email */}
                       <AvatarImage src="" alt={user.email} data-ai-hint="profile person" />
                       <AvatarFallback>{user.email.charAt(0).toUpperCase()}</AvatarFallback>
                     </Avatar>
@@ -57,6 +65,7 @@ export function Header() {
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
+                  {/* El enlace a /profile solo aparece si el usuario tiene cuenta */}
                   {user.role === 'user' && (
                     <DropdownMenuItem asChild>
                       <Link href="/profile">
