@@ -27,9 +27,7 @@ export function CreateThreadDialog({ onCreated }: Props) {
     try {
       // Los invitados (guest) pueden leer pero no crear contenido
       if (!user) {
-        throw new Error('Debes iniciar sesion para crear un hilo');
-      } else if (user.role == 'guest') {
-        throw new Error('Debes crear una cuenta para crear contenido');
+        throw new Error('No estas Autorizado');
       }
 
       const newThread = await threadsService.createThread({
@@ -44,7 +42,7 @@ export function CreateThreadDialog({ onCreated }: Props) {
 
       if (onCreated) onCreated(newThread);
     } catch (err: any) {
-      setError(err.message || 'Failed to create thread');
+      setError(err.message || 'No se ha podido crear el hilo');
     } finally {
       setLoading(false);
     }
