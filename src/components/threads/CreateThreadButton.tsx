@@ -30,12 +30,20 @@ export function CreateThreadButton({ onClick }: CreateThreadButtonProps) {
 
 
     return (
-        <button
-            type="button"
-            onClick={handleClick}
-            className="rounded-full bg-[#170fdb] px-4 py-2 text-sm font-medium text-white shadow-md shadow-[#170fdb] transition hover:bg-[#fff] hover:text-[#170fdb]"
-        >
-            + Nueva Conversacion
-        </button>
+        <div className="flex flex-col items-center gap-2">
+            <button
+                type="button"
+                onClick={handleClick}
+                className="rounded-full bg-[#170fdb] px-4 py-2 text-sm font-medium text-white shadow-md shadow-[#170fdb] transition hover:bg-[#fff] hover:text-[#170fdb]"
+            >
+                + Nueva Conversación
+            </button>
+
+            {error && (
+                <p className="text-sm text-red-400 text-center">
+                    {error}
+                </p>
+            )}
+        </div>
     );
 }
