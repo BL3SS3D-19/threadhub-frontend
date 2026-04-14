@@ -235,7 +235,7 @@ function HomePage() {
                                 className: "text-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mb-2 text-4xl font-bold text-[#FF3333]",
+                                        className: "mb-2 text-4xl font-bold text-destructive",
                                         children: "1,500+"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -243,7 +243,7 @@ function HomePage() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: " text-[#7FC0FF]",
+                                        className: " text-accent-foreground font-bold",
                                         children: "Barberos activos"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -260,7 +260,7 @@ function HomePage() {
                                 className: "text-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mb-2 text-4xl font-bold  text-[#FF3333]",
+                                        className: "mb-2 text-4xl font-bold  text-destructive",
                                         children: "50+"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -268,7 +268,7 @@ function HomePage() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: " text-[#7FC0FF]",
+                                        className: "  text-accent-foreground font-bold",
                                         children: "Ciudades en España"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -285,7 +285,7 @@ function HomePage() {
                                 className: "text-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mb-2 text-4xl font-bold text-[#FF3333]",
+                                        className: "mb-2 text-4xl font-bold text-destructive",
                                         children: "5,000+"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -293,7 +293,7 @@ function HomePage() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: " text-[#7FC0FF]",
+                                        className: "  text-accent-foreground font-bold",
                                         children: "Conexiones realizadas"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -373,7 +373,7 @@ function HomePage() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "mb-2 text-xl text-[#7FC0FF] font-semibold",
+                                            className: "mb-2 text-xl font-bold text-[#fff] ",
                                             children: "Herramientas y Productos"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -400,7 +400,7 @@ function HomePage() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "mb-4 inline-flex rounded-lg bg-primary/10 p-3",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpen$3e$__["BookOpen"], {
-                                                className: "h-6 w-6 text-[#FF3333]"
+                                                className: "h-6 w-6 text-[#ff3333]"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
                                                 lineNumber: 103,
@@ -412,7 +412,7 @@ function HomePage() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "mb-2 text-xl font-semibold text-[#7FC0FF]",
+                                            className: "mb-2 text-xl font-bold text-[#fff]",
                                             children: "Formación Profesional"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -451,7 +451,7 @@ function HomePage() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "mb-2 text-xl font-semibold text-[#7FC0FF]",
+                                            className: "mb-2 text-xl font-bold text-[#fff]",
                                             children: "Tendencias"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -490,7 +490,7 @@ function HomePage() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "mb-2 text-xl font-semibold text-[#7FC0FF]",
+                                            className: "mb-2 text-xl font-bold text-[#fff]",
                                             children: "Eventos y Competiciones"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -529,7 +529,7 @@ function HomePage() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "mb-2 text-xl font-semibold text-[#7FC0FF]",
+                                            className: "mb-2 text-xl font-bold text-[#fff]",
                                             children: "Networking Profesional"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -568,7 +568,7 @@ function HomePage() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "mb-2 text-xl font-semibold text-[#7FC0FF]",
+                                            className: "mb-2 text-xl font-bold text-[#fff]",
                                             children: "Experiencias Reales"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -651,7 +651,7 @@ function HomePage() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "mb-2 text-xl font-semibold text-[#7FC0FF]",
+                                            className: "mb-2 text-xl font-semibold text-accent",
                                             children: "Regístrate"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -684,7 +684,7 @@ function HomePage() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "mb-2 text-xl font-semibold text-[#7FC0FF]",
+                                            className: "mb-2 text-xl font-semibold text-accent",
                                             children: "Conecta"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -717,7 +717,7 @@ function HomePage() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "mb-2 text-xl font-semibold text-[#7FC0FF]  ",
+                                            className: "mb-2 text-xl font-semibold text-accent ",
                                             children: "Crece"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
@@ -763,7 +763,7 @@ function HomePage() {
                         className: "mx-auto max-w-3xl rounded-lg border border-border bg-card p-8 text-center md:p-12",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
-                                className: "mx-auto mb-6 h-16 w-16 text-[#FF3333]"
+                                className: "mx-auto mb-6 h-16 w-16 text-destructive"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
                                 lineNumber: 200,
@@ -828,7 +828,7 @@ function HomePage() {
                                 className: "flex items-center gap-2 ",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$scissors$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Scissors$3e$__["Scissors"], {
-                                        className: "h-6 w-6 text-[#FF3333]"
+                                        className: "h-6 w-6 text-destructive"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",
                                         lineNumber: 219,
@@ -849,7 +849,7 @@ function HomePage() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$proyectos$2f$threadhub$2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-[#7FC0FF]",
+                                className: "text-sm text-accent",
                                 children: "© 2025 ST8. La red profesional de barberos en España."
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/proyectos/threadhub/frontend/src/app/page.tsx",

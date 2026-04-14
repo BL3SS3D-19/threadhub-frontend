@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { LogOut, User as UserIcon, Eye } from 'lucide-react';
+import { LogOut, User as UserIcon, CircleUser } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,10 +24,10 @@ export function Header() {
   const { user, isLoading, logout } = useUser();
 
   return (
-    <header className="sticky top-0 z-50 w-full !important bg-black border-b border-border/40 backdrop-blur supports-[backdrop-filter]:">
-      <div className="container flex h-25 max-w-5xl items-center justify-between !important bg-black">
+    <header className="sticky top-0 z-50  w-full bg-black border-b border-border/40 backdrop-blur">
+      <div className="mx-auto flex h-20 w-full max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-5">
         <a href="/" className="flex items-center gap-2" aria-label="HiloHub Home">
-          <Image src={st8_logo} alt="Logo ST8" className="h-20 w-auto ml-2" />
+          <Image src={st8_logo} alt="Logo ST8" className="h-20 w-auto " />
         </a>
 
         <div className="flex items-center gap-3">
@@ -82,10 +82,10 @@ export function Header() {
               </DropdownMenu>
             </>
           ) : (
-            <Button asChild variant="outline" size="sm" className='mx-5'>
+            <Button asChild variant="outline" size="sm" className='ml-auto'>
               <Link href="/auth">
-                <Eye className="mr-2 h-4 w-4" />
-                Acceder
+                <CircleUser className="mr-2 h-4 w-4" />
+                Iniciar Sesion
               </Link>
             </Button>
           )}
