@@ -24,13 +24,13 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-border">
+      <section className="relative overflow-hidden border-b border-border ">
         <div className="container mx-auto px-4 py-24 md:py-32">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-6 text-balance text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+            <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
               La comunidad exclusiva para barberos profesionales
             </h1>
-            <p className="mb-8 text-pretty text-lg text-muted-foreground md:text-xl">
+            <p className="mb-8 text-pretty text-lg text-muted-foreground sm:text-lg md:text-xl">
               Conecta con profesionales de toda España. Comparte conocimientos, descubre tendencias y haz crecer tu
               negocio en una red diseñada exclusivamente para barberos.
             </p>

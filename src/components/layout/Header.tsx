@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useUser } from '@/context/UserContext';
 import Image from 'next/image';
-import st8_logo from './media/st8_logo.jpg';
+import st8_logo from './logos_st8/logos_rojos/PNG_S ROJO/State Project - Logo-31.png';
 
 // Header fijo en la parte superior de todas las páginas.
 // Muestra el logo y, dependiendo del estado de autenticación:
@@ -25,9 +25,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full !important bg-black border-b border-border/40 backdrop-blur supports-[backdrop-filter]:">
-      <div className="container flex h-20 max-w-5xl items-center justify-between !important bg-black">
+      <div className="container flex h-25 max-w-5xl items-center justify-between !important bg-black">
         <a href="/" className="flex items-center gap-2" aria-label="HiloHub Home">
-          <Image src={st8_logo} alt="Logo ST8" className="w-20" />
+          <Image src={st8_logo} alt="Logo ST8" className="h-20 w-auto ml-2" />
         </a>
 
         <div className="flex items-center gap-3">
@@ -82,7 +82,7 @@ export function Header() {
               </DropdownMenu>
             </>
           ) : (
-            <Button asChild variant="outline" size="sm">
+            <Button asChild variant="outline" size="sm" className='mx-5'>
               <Link href="/auth">
                 <Eye className="mr-2 h-4 w-4" />
                 Acceder
