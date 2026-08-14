@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { LogOut, User as UserIcon, Eye } from 'lucide-react';
+import { LogOut, User as UserIcon, CircleUser } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useUser } from '@/context/UserContext';
 import Image from 'next/image';
-import st8_logo from './media/st8_logo.jpg';
+import st8_logo from './logos_st8/logos_rojos/PNG_S ROJO/State Project - Logo-31.png';
 
 // Header fijo en la parte superior de todas las páginas.
 // Muestra el logo y, dependiendo del estado de autenticación:
@@ -24,10 +24,10 @@ export function Header() {
   const { user, isLoading, logout } = useUser();
 
   return (
-    <header className="sticky top-0 z-50 w-full !important bg-black border-b border-border/40 backdrop-blur supports-[backdrop-filter]:">
-      <div className="container flex h-20 max-w-5xl items-center justify-between !important bg-black">
+    <header className="sticky top-0 z-50  w-full bg-black border-b border-border/40 backdrop-blur">
+      <div className="mx-auto flex h-20 w-full max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-5">
         <a href="/" className="flex items-center gap-2" aria-label="HiloHub Home">
-          <Image src={st8_logo} alt="Logo ST8" className="w-20" />
+          <Image src={st8_logo} alt="Logo ST8" className="h-20 w-auto " />
         </a>
 
         <div className="flex items-center gap-3">
@@ -82,10 +82,10 @@ export function Header() {
               </DropdownMenu>
             </>
           ) : (
-            <Button asChild variant="outline" size="sm">
+            <Button asChild variant="outline" size="sm" className='ml-auto'>
               <Link href="/auth">
-                <Eye className="mr-2 h-4 w-4" />
-                Acceder
+                <CircleUser className="mr-2 h-4 w-4" />
+                Iniciar Sesion
               </Link>
             </Button>
           )}

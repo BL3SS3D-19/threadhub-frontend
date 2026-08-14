@@ -24,13 +24,13 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-border">
+      <section className="relative overflow-hidden border-b border-border ">
         <div className="container mx-auto px-4 py-24 md:py-32">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-6 text-balance text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+            <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
               La comunidad exclusiva para barberos profesionales
             </h1>
-            <p className="mb-8 text-pretty text-lg text-muted-foreground md:text-xl">
+            <p className="mb-8 text-pretty text-lg text-muted-foreground sm:text-lg md:text-xl">
               Conecta con profesionales de toda España. Comparte conocimientos, descubre tendencias y haz crecer tu
               negocio en una red diseñada exclusivamente para barberos.
             </p>
@@ -59,16 +59,16 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-16">
           <div className="grid gap-8 md:grid-cols-3">
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-[#FF3333]">1,500+</div>
-              <div className=" text-[#7FC0FF]">Barberos activos</div>
+              <div className="mb-2 text-4xl font-bold text-destructive">1,500+</div>
+              <div className=" text-accent-foreground font-bold">Barberos activos</div>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold  text-[#FF3333]">50+</div>
-              <div className=" text-[#7FC0FF]">Ciudades en España</div>
+              <div className="mb-2 text-4xl font-bold  text-destructive">50+</div>
+              <div className="  text-accent-foreground font-bold">Ciudades en España</div>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-[#FF3333]">5,000+</div>
-              <div className=" text-[#7FC0FF]">Conexiones realizadas</div>
+              <div className="mb-2 text-4xl font-bold text-destructive">5,000+</div>
+              <div className="  text-accent-foreground font-bold">Conexiones realizadas</div>
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function HomePage() {
               <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
                 <Scissors className="h-6 w-6 text-[#FF3333]" />
               </div>
-              <h3 className="mb-2 text-xl text-[#7FC0FF] font-semibold">Herramientas y Productos</h3>
+              <h3 className="mb-2 text-xl font-bold text-[#fff] ">Herramientas y Productos</h3>
               <p className=" text-[#fff]">
                 Descubre y comparte información sobre las mejores herramientas y productos del mercado. Reseñas reales
                 de profesionales.
@@ -100,9 +100,9 @@ export default function HomePage() {
 
             <Card className="border-border bg-card p-6 transition-colors hover:border-accent">
               <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
-                <BookOpen className="h-6 w-6 text-[#FF3333]" />
+                <BookOpen className="h-6 w-6 text-[#ff3333]" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-[#7FC0FF]">Formación Profesional</h3>
+              <h3 className="mb-2 text-xl font-bold text-[#fff]">Formación Profesional</h3>
               <p className="text-[#fff]">
                 Accede a información sobre cursos, talleres y formaciones especializadas para mejorar tus técnicas y
                 habilidades.
@@ -113,7 +113,7 @@ export default function HomePage() {
               <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
                 <TrendingUp className="h-6 w-6 text-[#FF3333]" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-[#7FC0FF]">Tendencias</h3>
+              <h3 className="mb-2 text-xl font-bold text-[#fff]">Tendencias</h3>
               <p className="text-[#fff]">
                 Mantente actualizado con las últimas tendencias en cortes, estilos y técnicas de barbería a nivel
                 nacional e internacional.
@@ -124,7 +124,7 @@ export default function HomePage() {
               <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
                 <Calendar className="h-6 w-6 text-[#FF3333]" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-[#7FC0FF]">Eventos y Competiciones</h3>
+              <h3 className="mb-2 text-xl font-bold text-[#fff]">Eventos y Competiciones</h3>
               <p className="text-[#fff] ">
                 Entérate de eventos, competiciones y encuentros profesionales en toda España. No te pierdas ninguna
                 oportunidad.
@@ -135,7 +135,7 @@ export default function HomePage() {
               <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
                 <Network className="h-6 w-6 text-[#FF3333]" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-[#7FC0FF]">Networking Profesional</h3>
+              <h3 className="mb-2 text-xl font-bold text-[#fff]">Networking Profesional</h3>
               <p className="text-[#fff]">
                 Establece contactos con otros profesionales, encuentra oportunidades de negocio y crea alianzas
                 estratégicas.
@@ -146,7 +146,7 @@ export default function HomePage() {
               <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
                 <Star className="h-6 w-6 text-[#FF3333]" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-[#7FC0FF]">Experiencias Reales</h3>
+              <h3 className="mb-2 text-xl font-bold text-[#fff]">Experiencias Reales</h3>
               <p className="text-[#fff]">
                 Lee y comparte experiencias reales de otros barberos. Aprende de casos de éxito y evita errores comunes.
               </p>
@@ -170,7 +170,7 @@ export default function HomePage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#FF3333] text-2xl font-bold text-primary-foreground">
                 1
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-[#7FC0FF]">Regístrate</h3>
+              <h3 className="mb-2 text-xl font-semibold text-accent">Regístrate</h3>
               <p className="text-[#fff]">Crea tu perfil profesional y únete a la comunidad exclusiva</p>
             </div>
 
@@ -178,7 +178,7 @@ export default function HomePage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#FF3333] text-2xl font-bold text-primary-foreground">
                 2
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-[#7FC0FF]">Conecta</h3>
+              <h3 className="mb-2 text-xl font-semibold text-accent">Conecta</h3>
               <p className="text-[#fff]">Encuentra y conecta con barberos de tu zona o de toda España</p>
             </div>
 
@@ -186,7 +186,7 @@ export default function HomePage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#FF3333] text-2xl font-bold text-primary-foreground">
                 3
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-[#7FC0FF]  ">Crece</h3>
+              <h3 className="mb-2 text-xl font-semibold text-accent ">Crece</h3>
               <p className="text-[#fff] ">Comparte conocimientos, aprende y haz crecer tu negocio</p>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function HomePage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl rounded-lg border border-border bg-card p-8 text-center md:p-12">
-            <Users className="mx-auto mb-6 h-16 w-16 text-[#FF3333]" />
+            <Users className="mx-auto mb-6 h-16 w-16 text-destructive" />
             <h2 className="mb-4 text-balance text-[#fff] text-3xl font-bold md:text-4xl">Únete a la comunidad hoy</h2>
             <p className="mb-8 text-pretty text-lg text-muted-foreground">
               Miles de barberos ya están conectados y haciendo crecer sus negocios.¿A qué esperas?
@@ -216,10 +216,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex items-center gap-2 ">
-              <Scissors className="h-6 w-6 text-[#FF3333]" />
+              <Scissors className="h-6 w-6 text-destructive" />
               <span className="text-lg font-semibold text-primary">ST8</span>
             </div>
-            <p className="text-sm text-[#7FC0FF]">
+            <p className="text-sm text-accent">
               © 2025 ST8. La red profesional de barberos en España.
             </p>
           </div>
