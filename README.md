@@ -1,9 +1,16 @@
 # ThreadHub — Frontend
 
-Frontend del proyecto final **ThreadHub**, una comunidad de hilos y respuestas para barberos profesionales.
+Proyecto final — parte frontend.
+
+- **Alumno:** Pablo Suárez
+- **Stack:** Next.js 16, React 18, TypeScript, Tailwind CSS
+
+## Enlaces de entrega
 
 - **Repositorio:** https://github.com/BL3SS3D-19/threadhub-frontend
-- **Stack:** Next.js 16, React 18, TypeScript, Tailwind CSS
+- **Web:** pendiente de despliegue (sustituir por la URL pública, p. ej. `https://threadhub-frontend.vercel.app`)
+
+En local la app corre en [http://localhost:9002](http://localhost:9002) con el backend en `http://localhost:3000`.
 
 ## Requisitos
 
@@ -18,8 +25,6 @@ pnpm dev
 ```
 
 También vale `npm install` y `npm run dev`.
-
-La app queda en **http://localhost:9002**.
 
 Copia `.env.example` a `.env.local` y ajusta la URL del backend si no usas el puerto 3000:
 
