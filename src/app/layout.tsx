@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Toaster } from '@/components/ui/toaster';
 import { Providers } from '@/components/layout/Providers';
 import './globals.css';
 
@@ -33,7 +32,6 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
-          <Toaster />
         </Providers>
       </body>
     </html>

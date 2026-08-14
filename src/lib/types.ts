@@ -21,11 +21,6 @@ export interface CreateThreadDTO {
   content: string;
   authorId: string;
 }
-// DTOs para actualizar recursos
-export interface UpdateThreadDTO {
-  title?: string;
-  content?: string;
-}
 
 // Filtros para queries
 export interface ThreadFilters {
@@ -50,22 +45,6 @@ export interface ReplyResponse {
   updatedAt: Date;
 }
 
-// Users
-export interface UserResponse {
-  id: string;
-  username: string;
-  email: string;
-  avatarUrl: string | null;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface CreateUserDTO {
-  username: string;
-  email: string;
-  password: string;
-  avatarUrl?: string;
-}
 export interface CreateReplyDTO {
   content: string;
   threadId: string;

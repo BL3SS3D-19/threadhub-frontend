@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useUser } from '@/context/UserContext';
-import { CreateThreadDTO, ThreadResponse, UserResponse } from '@/lib/types';
+import { ThreadResponse } from '@/lib/types';
 import { threadsService } from '@/services/threads.service';
 
 interface Props {

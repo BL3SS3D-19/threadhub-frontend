@@ -1,5 +1,5 @@
 import { http } from '../lib/http';
-import { ThreadResponse, CreateThreadDTO, UpdateThreadDTO, ThreadFilters, ReplyResponse, CreateReplyDTO } from '../lib/types';
+import { ThreadResponse, CreateThreadDTO, ThreadFilters, ReplyResponse, CreateReplyDTO } from '../lib/types';
 
 // Todas las llamadas a la API relacionadas con hilos y respuestas.
 // La función `http` se encarga de los headers comunes y de propagar
@@ -47,21 +47,4 @@ export const threadsService = {
             body: JSON.stringify(data),
         });
     },
-
-    // PATCH parcial: permite actualizar solo los campos enviados.
-    async updateThread(id: string, data: UpdateThreadDTO): Promise<ThreadResponse[]> {
-        return http<ThreadResponse[]>(`/api/replies/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-    },
-
-    async deleteThread(id: string): Promise<void> {
-        return http<void>(`/api/threads/${id}`, {
-            method: 'DELETE',
-        });
-    }
 }

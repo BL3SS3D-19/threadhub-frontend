@@ -2,20 +2,17 @@
 
 import { formatDistanceToNow } from 'date-fns';
 
-import { ThreadResponse, ReplyResponse, UserResponse } from '@/lib/types';
+import { ThreadResponse, ReplyResponse } from '@/lib/types';
 
 interface ThreadViewProps {
   thread: ThreadResponse;
   replies?: ReplyResponse[];
-  // onReply se pasa por si en algún momento se quiere mover
-  // el formulario de respuesta dentro de este componente.
-  onReply?: (content: string) => void;
 }
 
 // Vista de detalle de un hilo: muestra el post original en la parte
 // superior y debajo la lista de respuestas ordenadas por fecha de creación
 // (el orden lo controla la API, aquí solo renderizamos).
-export function ThreadView({ thread, replies = [], onReply }: ThreadViewProps) {
+export function ThreadView({ thread, replies = [] }: ThreadViewProps) {
   return (
     <div className="space-y-6">
       {/* Post original */}
