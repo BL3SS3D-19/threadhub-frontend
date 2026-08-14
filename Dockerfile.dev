@@ -10,8 +10,8 @@ RUN npm install
 # Copiar código fuente
 COPY . .
 
-# Exponer puerto de Vite
-EXPOSE 9002
+# Comando de desarrollo
+CMD ["npm", "run", "dev"]
 
 # Variable de entorno para el backend
 ENV NEXT_PUBLIC_API_URL=http://localhost:3000
